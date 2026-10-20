@@ -263,7 +263,7 @@ button{touch-action:manipulation}
 .music-btn.on .eq i:nth-child(4){animation-delay:-.15s}
 @keyframes eq{from{height:3px}to{height:16px}}
 
-.tap-heart{position:fixed;z-index:7;width:16px;height:16px;pointer-events:none}
+.tap-heart{position:fixed;z-index:7;width:28px;height:28px;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(150,56,93,.25))}
 .tap-heart svg{width:100%;height:100%;display:block}
 
 @media (max-width:620px){
@@ -364,7 +364,7 @@ button{touch-action:manipulation}
     <span class="env-letter"><span class="mini-greet">Thân gửi <span class="js-given"></span></span><span class="mini-lines"><i></i><i></i><i></i></span></span>
     <span class="env-pocket"></span>
     <span class="env-flap"></span>
-    <span class="env-seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.6 4.5c2 0 3.6 1.1 4.4 2.6.8-1.5 2.4-2.6 4.4-2.6 3.6 0 5.7 3.8 4.2 7.3C19.5 16.4 12 21 12 21z"/></svg></span>
+    <span class="env-seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.5c-2.2 0-4 1.8-4 4 0 1.8 1.4 3.5 4 3.5s4-1.7 4-3.5c0-2.2-1.8-4-4-4zm-5-3.5c-.8 0-1.5.9-1.5 2s.7 2 1.5 2 1.5-.9 1.5-2-.7-2-1.5-2zm10 0c-.8 0-1.5.9-1.5 2s.7 2 1.5 2 1.5-.9 1.5-2-.7-2-1.5-2zm-6.5-2c-.9 0-1.6 1-1.6 2.2s.7 2.2 1.6 2.2 1.6-1 1.6-2.2-.7-2.2-1.6-2.2zm3 0c-.9 0-1.6 1-1.6 2.2s.7 2.2 1.6 2.2 1.6-1 1.6-2.2-.7-2.2-1.6-2.2z"/></svg></span>
   </button>
   <p class="tap-note">Chạm vào con dấu để mở thư</p>
 </section>
@@ -517,21 +517,32 @@ function formatName(raw) {
 }
 const fillText = s => String(s || '').replace(/\{ten\}/g, S.given).replace(/\{name\}/g, S.name);
 
-/* ---------------- tim bay khi chạm ---------------- */
-const TAP_COLORS = ['#f59cb7', '#f8bfd1', '#d25982', '#fce2ec', '#ffffff'];
-function tapBurst(x, y, n = 6) {
+/* ---------------- hình chibi ngộ nghĩnh bay khi chạm ---------------- */
+const CHIBIS = [
+  // 1. Bé Thỏ chibi tai dài má hồng
+  '<svg viewBox="0 0 32 32" fill="none"><ellipse cx="10" cy="9" rx="3.5" ry="8" fill="#ffffff" stroke="#d25982" stroke-width="1.2"/><ellipse cx="10" cy="9" rx="1.8" ry="5" fill="#fbbdd0"/><ellipse cx="22" cy="9" rx="3.5" ry="8" fill="#ffffff" stroke="#d25982" stroke-width="1.2"/><ellipse cx="22" cy="9" rx="1.8" ry="5" fill="#fbbdd0"/><circle cx="16" cy="19" r="10.5" fill="#ffffff" stroke="#d25982" stroke-width="1.2"/><ellipse cx="11" cy="21" rx="2.2" ry="1.2" fill="#fca5bc"/><ellipse cx="21" cy="21" rx="2.2" ry="1.2" fill="#fca5bc"/><circle cx="12" cy="18" r="1.3" fill="#3a2432"/><circle cx="20" cy="18" r="1.3" fill="#3a2432"/><path d="M15 19.5q1 1 2 0" stroke="#3a2432" stroke-width="1.1" stroke-linecap="round"/></svg>',
+  // 2. Bé Gấu chibi mật ong
+  '<svg viewBox="0 0 32 32" fill="none"><circle cx="8" cy="10" r="4" fill="#fde2cc" stroke="#96385d" stroke-width="1.2"/><circle cx="8" cy="10" r="2" fill="#f8af94"/><circle cx="24" cy="10" r="4" fill="#fde2cc" stroke="#96385d" stroke-width="1.2"/><circle cx="24" cy="10" r="2" fill="#f8af94"/><circle cx="16" cy="18" r="11" fill="#fde2cc" stroke="#96385d" stroke-width="1.2"/><ellipse cx="16" cy="20" rx="4.5" ry="3.5" fill="#ffffff"/><circle cx="11" cy="17" r="1.3" fill="#3a2432"/><circle cx="21" cy="17" r="1.3" fill="#3a2432"/><ellipse cx="10" cy="20" rx="2" ry="1.1" fill="#fca5bc"/><ellipse cx="22" cy="20" rx="2" ry="1.1" fill="#fca5bc"/><circle cx="16" cy="19" r="1.1" fill="#3a2432"/><path d="M14.8 20.8q1.2 1.2 2.4 0" stroke="#3a2432" stroke-width="1.1" stroke-linecap="round"/></svg>',
+  // 3. Bé Mèo chibi tai hồng
+  '<svg viewBox="0 0 32 32" fill="none"><path d="M7 16L10 7L16 12Z" fill="#fff1f6" stroke="#d25982" stroke-width="1.2" stroke-linejoin="round"/><path d="M9 14L11 9L14 12Z" fill="#fba8c0"/><path d="M25 16L22 7L16 12Z" fill="#fff1f6" stroke="#d25982" stroke-width="1.2" stroke-linejoin="round"/><path d="M23 14L21 9L18 12Z" fill="#fba8c0"/><circle cx="16" cy="18" r="11" fill="#fff1f6" stroke="#d25982" stroke-width="1.2"/><ellipse cx="10" cy="20" rx="2.2" ry="1.2" fill="#fca5bc"/><ellipse cx="22" cy="20" rx="2.2" ry="1.2" fill="#fca5bc"/><circle cx="12" cy="17" r="1.3" fill="#3a2432"/><circle cx="20" cy="17" r="1.3" fill="#3a2432"/><path d="M15 19.5L16 18.5L17 19.5" stroke="#d25982" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.8 20.2q1.2 1 2.4 0" stroke="#3a2432" stroke-width="1.1" stroke-linecap="round"/></svg>',
+  // 4. Bé Ngôi sao chibi mơ mộng
+  '<svg viewBox="0 0 32 32" fill="none"><path d="M16 2L20 11L30 12L22 19L25 29L16 24L7 29L10 19L2 12L12 11Z" fill="#fff0b3" stroke="#cca162" stroke-width="1.2" stroke-linejoin="round"/><circle cx="12" cy="16" r="1.3" fill="#3a2432"/><circle cx="20" cy="16" r="1.3" fill="#3a2432"/><ellipse cx="10" cy="18" rx="2" ry="1.1" fill="#fca5bc"/><ellipse cx="22" cy="18" rx="2" ry="1.1" fill="#fca5bc"/><path d="M14.5 18.5q1.5 1.5 3 0" stroke="#3a2432" stroke-width="1.1" stroke-linecap="round"/></svg>',
+  // 5. Bé Gà con chibi đáng yêu
+  '<svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="18" r="11" fill="#fff5c2" stroke="#cca162" stroke-width="1.2"/><path d="M16 4Q17 6 15 8Q16 8 16 9" stroke="#cca162" stroke-width="1.2" stroke-linecap="round"/><circle cx="11" cy="16" r="1.3" fill="#3a2432"/><circle cx="21" cy="16" r="1.3" fill="#3a2432"/><ellipse cx="9" cy="19" rx="2.2" ry="1.2" fill="#fca5bc"/><ellipse cx="23" cy="19" rx="2.2" ry="1.2" fill="#fca5bc"/><path d="M14 18L16 20.5L18 18Z" fill="#fa9848" stroke="#d47020" stroke-width="0.8"/></svg>'
+];
+function tapBurst(x, y, n = 5) {
   if (REDUCED) return;
   for (let i = 0; i < n; i++) {
     const el = document.createElement('span');
     el.className = 'tap-heart';
-    el.innerHTML = `<svg viewBox="0 0 24 24"><path d="${HEART_PATH}" fill="${TAP_COLORS[i % TAP_COLORS.length]}" stroke="rgba(210,89,130,.3)" stroke-width=".8"/></svg>`;
+    el.innerHTML = CHIBIS[(i + Math.floor(Math.random() * CHIBIS.length)) % CHIBIS.length];
     el.style.left = x + 'px'; el.style.top = y + 'px';
     document.body.appendChild(el);
-    const a = Math.random() * Math.PI * 2, d = 36 + Math.random() * 56, sc = 0.7 + Math.random() * 0.8;
+    const a = Math.random() * Math.PI * 2, d = 42 + Math.random() * 58, sc = 0.85 + Math.random() * 0.45;
     const anim = el.animate([
-      { transform: 'translate(-50%,-50%) scale(.3)', opacity: 1 },
-      { transform: `translate(calc(-50% + ${Math.cos(a) * d}px), calc(-50% + ${Math.sin(a) * d - 34}px)) scale(${sc}) rotate(${(Math.random() - .5) * 70}deg)`, opacity: 0 }
-    ], { duration: 900 + Math.random() * 600, easing: 'cubic-bezier(.2,.7,.3,1)' });
+      { transform: 'translate(-50%,-50%) scale(.3) rotate(0deg)', opacity: 1 },
+      { transform: `translate(calc(-50% + ${Math.cos(a) * d}px), calc(-50% + ${Math.sin(a) * d - 36}px)) scale(${sc}) rotate(${(Math.random() - .5) * 60}deg)`, opacity: 0 }
+    ], { duration: 950 + Math.random() * 500, easing: 'cubic-bezier(.2,.7,.3,1)' });
     anim.onfinish = () => el.remove();
   }
 }
@@ -745,6 +756,44 @@ function initThree() {
     g.rotateX(-Math.PI / 2); g.center(); return g;
   }
   const heartGeo = heartGeometry();
+  function chibiGeometry() {
+    const s = new T.Shape();
+    s.moveTo(0, -18);
+    s.bezierCurveTo(14, -18, 22, -10, 22, 2);
+    s.bezierCurveTo(22, 10, 18, 16, 14, 18);
+    s.bezierCurveTo(22, 22, 26, 32, 18, 36);
+    s.bezierCurveTo(11, 38, 8, 28, 7, 21);
+    s.bezierCurveTo(3, 22, -3, 22, -7, 21);
+    s.bezierCurveTo(-8, 28, -11, 38, -18, 36);
+    s.bezierCurveTo(-26, 32, -22, 22, -14, 18);
+    s.bezierCurveTo(-18, 16, -22, 10, -22, 2);
+    s.bezierCurveTo(-22, -10, -14, -18, 0, -18);
+    const g = new T.ExtrudeGeometry(s, { depth: 10, bevelEnabled: true, bevelSegments: 6, bevelSize: 6, bevelThickness: 8, curveSegments: 24 });
+    g.center(); g.computeBoundingBox();
+    const h = g.boundingBox.max.y - g.boundingBox.min.y; g.scale(1 / h, 1 / h, 1 / h);
+    return g;
+  }
+  const chibiGeo = chibiGeometry();
+  const chibiFaceTex = canvasTex(128, 128, g => {
+    g.fillStyle = '#3a2432';
+    g.beginPath(); g.arc(42, 60, 5.5, 0, Math.PI * 2); g.fill();
+    g.beginPath(); g.arc(86, 60, 5.5, 0, Math.PI * 2); g.fill();
+    g.fillStyle = '#ffffff';
+    g.beginPath(); g.arc(40, 58, 2, 0, Math.PI * 2); g.fill();
+    g.beginPath(); g.arc(84, 58, 2, 0, Math.PI * 2); g.fill();
+    g.fillStyle = 'rgba(252, 165, 188, 0.85)';
+    g.beginPath(); g.ellipse(34, 74, 9, 5, 0, 0, Math.PI * 2); g.fill();
+    g.beginPath(); g.ellipse(94, 74, 9, 5, 0, 0, Math.PI * 2); g.fill();
+    g.strokeStyle = '#3a2432'; g.lineWidth = 3; g.lineCap = 'round';
+    g.beginPath(); g.arc(64, 70, 7, 0.2, Math.PI - 0.2); g.stroke();
+  });
+  function createChibiMesh(material) {
+    const m = new T.Mesh(chibiGeo, material);
+    const face = new T.Mesh(new T.PlaneGeometry(0.72, 0.72), new T.MeshBasicMaterial({ map: chibiFaceTex, transparent: true, depthWrite: false }));
+    face.position.z = 0.52;
+    m.add(face);
+    return m;
+  }
   const glossy = color => new T.MeshPhysicalMaterial({ color, roughness: 0.16, metalness: 0.02, clearcoat: 1, clearcoatRoughness: 0.08, envMapIntensity: 1 });
 
   /* chất liệu pha lê: kính bóng nhiều mặt cắt + viền sáng ánh cầu vồng */
@@ -944,12 +993,12 @@ function initThree() {
     }
   }
 
-  /* ---- tim bóng trôi nền ---- */
+  /* ---- chibi bóng trôi nền ---- */
   const fMats = [glossy(0xf29cb5), glossy(0xfff6fa), glossy(0xe8d6f5), glossy(0xf4b6c8)];
   const floaters = [];
   for (let i = 0; i < (SMALL ? 4 : 6); i++) {
-    const m = new T.Mesh(heartGeo, fMats[i % 4]);
-    m.userData = { fx: (i % 2 ? 1 : -1) * rand(0.28, 0.48), fy: rand(-0.42, 0.42), z: rand(-9, -4), s: rand(0.45, 0.85), ph: rand(0, 6.28), sp: rand(0.5, 0.9), dir: i % 3 ? 1 : -1 };
+    const m = createChibiMesh(fMats[i % 4]);
+    m.userData = { fx: (i % 2 ? 1 : -1) * rand(0.28, 0.48), fy: rand(-0.42, 0.42), z: rand(-9, -4), s: rand(0.55, 0.95), ph: rand(0, 6.28), sp: rand(0.5, 0.9), dir: i % 3 ? 1 : -1 };
     m.position.z = m.userData.z; m.scale.setScalar(m.userData.s);
     scene.add(m); floaters.push(m);
   }
@@ -983,11 +1032,11 @@ function initThree() {
   const goldDust = sparkleCloud(SMALL ? 110 : 170, () => { const a = rand(0, 6.28), r = rand(1.25, 2.3); return [Math.cos(a) * r, rand(-1.2, 1.1), Math.sin(a) * r]; }, 3, 10, 0xffd27a);
   roseRoot.add(goldDust);
 
-  /* ---- pháo tim ---- */
+  /* ---- pháo chibi ngộ nghĩnh ---- */
   const pool = [];
   for (let i = 0; i < 30; i++) {
     const mat = fMats[i % 4].clone(); mat.transparent = true;
-    const m = new T.Mesh(heartGeo, mat); m.visible = false; scene.add(m);
+    const m = createChibiMesh(mat); m.visible = false; scene.add(m);
     pool.push({ m, v: new T.Vector3(), life: 0, g: 3.2, spin: new T.Vector3() });
   }
   function heartBurst(o, n, power, opts) {
@@ -998,7 +1047,7 @@ function initThree() {
       h.v.set(rand(-1, 1), rand(0.5, 1.4), rand(-0.3, 0.9)).normalize().multiplyScalar(power * rand(0.55, 1));
       if (o2.up) h.v.set(rand(-0.4, 0.4), rand(1.2, 2.4), rand(-0.2, 0.4));
       h.g = o2.up ? -0.25 : 3.2; h.life = rand(1.6, 2.6);
-      h.spin.set(rand(-3, 3), rand(-4, 4), rand(-2, 2)); h.m.visible = true; h.m.scale.setScalar(rand(0.14, 0.3) * (o2.scale || 1));
+      h.spin.set(rand(-3, 3), rand(-4, 4), rand(-2, 2)); h.m.visible = true; h.m.scale.setScalar(rand(0.2, 0.42) * (o2.scale || 1));
     }
   }
 
