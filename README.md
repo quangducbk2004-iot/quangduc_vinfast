@@ -42,7 +42,7 @@ Mở `index.html` bằng trình soạn thảo bất kỳ (khuyên dùng VS Code)
 
 | Muốn đổi | Tìm trong `index.html` | Ghi chú |
 | --- | --- | --- |
-| Tên người gửi (ký cuối thư) | `sender: "Nguyễn Thế Việt"` | Trong khối `const CONFIG` |
+| Tên người gửi (ký cuối thư) | `sender: "Đào Quang Đức"` | Trong khối `const CONFIG` |
 | Ngày ghi trên thư | `date: "Ngày 20 tháng 10 năm 2026"` | Trong `const CONFIG` |
 | Nội dung các lá thư | `letters: [` | Xem mục "Viết thư" bên dưới |
 | Nhạc nền | `musicUrl: "nhac.mp3"` | Thay file `nhac.mp3`, hoặc đổi tên file ở đây. Để `""` thì trang dùng nhạc hộp nhạc tự tạo |

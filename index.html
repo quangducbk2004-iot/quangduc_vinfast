@@ -418,9 +418,9 @@ button{touch-action:manipulation}
      Để trống, hoặc nếu file không tải được, trang sẽ tự dùng nhạc hộp nhạc.
    ===================================================================== */
 const CONFIG = {
-  sender: "Nguyễn Thế Việt",
+  sender: "Đào Quang Đức",
   date: "Ngày 20 tháng 10 năm 2026",
-  musicUrl: "nhac.mp3",
+  musicUrl: "the_gioi_cua_anh.mp3",
   letters: [
     {
       paragraphs: [
@@ -553,7 +553,15 @@ function createMusic() {
   }
   if (useFile) {
     audioEl = new Audio(); audioEl.src = CONFIG.musicUrl; audioEl.loop = true; audioEl.preload = 'auto'; audioEl.volume = 0;
-    audioEl.addEventListener('error', () => { useFile = false; if (on) { on = false; start(); } });
+    audioEl.addEventListener('error', () => {
+      if (CONFIG.musicUrl !== 'nhac.mp3' && !audioEl.dataset.fallback) {
+        audioEl.dataset.fallback = 'true';
+        audioEl.src = 'nhac.mp3';
+        if (on) audioEl.play().catch(() => {});
+        return;
+      }
+      useFile = false; if (on) { on = false; start(); }
+    });
   }
   const EIGHTH = 60 / 76 / 2;
   const CHORDS = [[62, 'M'], [57, 'M'], [59, 'm'], [54, 'm'], [55, 'M'], [62, 'M'], [55, 'M'], [57, 'M']];
