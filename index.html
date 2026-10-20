@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Một đóa hồng pha lê và một lá thư tay dành riêng cho cậu nhân ngày Phụ nữ Việt Nam 20/10.">
-<meta name="theme-color" content="#f6c9dc">
+<meta name="theme-color" content="#fae2ec">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Thư Hồng 20.10 · Happy Women's Day">
 <meta property="og:description" content="Một đóa hồng pha lê và một lá thư tay dành riêng cho cậu nhân ngày Phụ nữ Việt Nam 20/10.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e2477f' d='M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.6 4.5c2 0 3.6 1.1 4.4 2.6.8-1.5 2.4-2.6 4.4-2.6 3.6 0 5.7 3.8 4.2 7.3C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23d25982' d='M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.6 4.5c2 0 3.6 1.1 4.4 2.6.8-1.5 2.4-2.6 4.4-2.6 3.6 0 5.7 3.8 4.2 7.3C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E">
 </head>
 <body>
 <title>Thư Hồng 20.10</title>
@@ -20,10 +20,10 @@
 /* Layout: bầu trời 3D toàn màn hình phía sau, các cảnh xếp nối tiếp ở giữa:
    nhập tên → hộp quà → đóa hồng tương tác → phong thư → thư tay → lời kết */
 :root{
-  --sky:#c3d6ff; --lilac:#e3d2f7; --blush:#ffd4e4; --petal:#ffe8f0;
-  --rose:#e2477f; --rose-deep:#b8326a; --ink:#5e2142; --ink-soft:#8f5274;
-  --paper:#fffaf5; --gold:#c9984f;
-  --glass:rgba(255,255,255,.46); --glass-line:rgba(255,255,255,.8);
+  --sky:#dbe8f6; --lilac:#ede2f4; --blush:#fae2ec; --petal:#fff5f8;
+  --rose:#d25982; --rose-deep:#96385d; --ink:#3a2432; --ink-soft:#775669;
+  --paper:#fffdf9; --gold:#cca162;
+  --glass:rgba(255,255,255,.58); --glass-line:rgba(255,255,255,.85);
   --f-script:"Great Vibes","Dancing Script",cursive;
   --f-viet-script:"Dancing Script","Great Vibes",cursive;
   --f-display:"Playfair Display",Georgia,"Times New Roman",serif;
@@ -33,7 +33,7 @@
 }
 html,body{height:100%}
 body{margin:0;overflow:hidden;font-family:var(--f-body);color:var(--ink);
-  background:linear-gradient(180deg,var(--sky) 0%,var(--lilac) 38%,var(--blush) 72%,var(--petal) 100%);
+  background:linear-gradient(180deg,var(--sky) 0%,var(--lilac) 36%,var(--blush) 70%,var(--petal) 100%);
   -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 button,input{font:inherit}
 button{touch-action:manipulation}
@@ -42,7 +42,7 @@ button{touch-action:manipulation}
 /* ---------- bầu trời ---------- */
 .sky{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
 .sun{position:absolute;top:-18vmax;right:-14vmax;width:60vmax;height:60vmax;border-radius:50%;
-  background:radial-gradient(closest-side,rgba(255,252,240,.95),rgba(255,236,244,.55) 40%,rgba(255,230,240,0))}
+  background:radial-gradient(closest-side,rgba(255,252,242,.95),rgba(255,238,245,.55) 40%,rgba(255,235,243,0))}
 .cloud{position:absolute;left:0;width:620px;height:200px;border-radius:50%;opacity:.85;
   background:radial-gradient(closest-side,rgba(255,255,255,.95),rgba(255,255,255,.55) 50%,rgba(255,255,255,0));
   filter:blur(6px);animation:drift linear infinite}
@@ -53,8 +53,8 @@ button{touch-action:manipulation}
 .c3{top:58%;width:720px;height:240px;animation-duration:160s;animation-delay:-40s;opacity:.6}
 .c4{top:16%;width:380px;height:130px;animation-duration:120s;animation-delay:-70s;opacity:.65}
 .fog{position:absolute;left:-10%;right:-10%;bottom:-8%;height:34%;
-  background:radial-gradient(60% 80% at 30% 100%,rgba(255,196,218,.9),transparent 70%),radial-gradient(60% 80% at 75% 100%,rgba(255,214,230,.95),transparent 70%);
-  filter:blur(10px)}
+  background:radial-gradient(60% 80% at 30% 100%,rgba(250,212,226,.85),transparent 70%),radial-gradient(60% 80% at 75% 100%,rgba(255,228,238,.9),transparent 70%);
+  filter:blur(14px)}
 @keyframes drift{from{transform:translateX(-50vw)}to{transform:translateX(120vw)}}
 #scene{position:fixed;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none}
 
@@ -76,61 +76,61 @@ button{touch-action:manipulation}
 
 .eyebrow{margin:0;font:600 .74rem/1.4 var(--f-body);letter-spacing:.28em;text-transform:uppercase;color:var(--rose-deep);opacity:.85}
 .script-title{margin:.04em 0 0;padding:0 .18em;font:400 clamp(3rem,11vw,5.8rem)/1.05 var(--f-script);text-wrap:balance;text-align:center;
-  background:linear-gradient(180deg,#ff94bc 10%,#e04a84 62%,#b8326a);-webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 2px 0 rgba(255,255,255,.9)) drop-shadow(0 10px 22px rgba(214,66,125,.28))}
+  background:linear-gradient(180deg,#f8a5bd 10%,#d25982 62%,#96385d);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 rgba(255,255,255,.9)) drop-shadow(0 10px 22px rgba(180,60,100,.18))}
 .date-big{margin:0;font:500 clamp(1.1rem,3.4vw,1.5rem)/1 var(--f-display);letter-spacing:.34em;color:var(--rose);padding-left:.34em}
 .name-title{margin:.05em 0;font:700 clamp(2.3rem,8.4vw,3.6rem)/1.15 var(--f-viet-script);color:var(--rose-deep);text-align:center;text-wrap:balance;
-  text-shadow:0 2px 0 rgba(255,255,255,.85),0 10px 26px rgba(214,66,125,.25)}
+  text-shadow:0 2px 0 rgba(255,255,255,.85),0 10px 26px rgba(180,60,100,.18)}
 .stage-text{display:flex;flex-direction:column;align-items:center;gap:4px;max-width:560px;text-align:center;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
 .stage-text .lead{margin:0;font:italic 400 clamp(1rem,3.4vw,1.16rem)/1.6 var(--f-letter);color:var(--ink-soft);text-wrap:balance}
 .screen:not(.active) .stage-text{animation:none}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
 .chip{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:7px 14px;border-radius:999px;
-  background:rgba(255,255,255,.55);border:1px solid var(--glass-line);font:500 .82rem var(--f-body);color:var(--ink-soft);letter-spacing:.02em}
+  background:rgba(255,255,255,.6);border:1px solid var(--glass-line);font:500 .82rem var(--f-body);color:var(--ink-soft);letter-spacing:.02em}
 .chip svg{width:16px;height:16px;fill:none;stroke:var(--rose);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:15px 28px;cursor:pointer;
   font:500 1rem/1 var(--f-body);letter-spacing:.01em;position:relative;overflow:hidden;
   transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,opacity .4s ease}
 .btn svg{width:18px;height:18px;fill:currentColor;flex:none}
-.btn.primary{color:#fff;background:linear-gradient(135deg,#ff7fae,#e2477f 58%,#c63a73);
-  box-shadow:0 10px 26px rgba(226,71,127,.38),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn.primary{color:#fff;background:linear-gradient(135deg,#f48ea8,#d25982 58%,#b4426b);
+  box-shadow:0 10px 24px rgba(210,89,130,.3),inset 0 1px 0 rgba(255,255,255,.5)}
 .btn.primary::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;transform:skewX(-20deg);
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:shine 3.6s ease-in-out infinite}
-.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(226,71,127,.5)}
-.btn.ghost{color:var(--rose-deep);background:rgba(255,255,255,.62);box-shadow:inset 0 0 0 1px rgba(226,71,127,.28),0 6px 18px rgba(214,76,135,.12)}
-.btn.ghost:hover{background:rgba(255,255,255,.85)}
-.btn:focus-visible,.envelope:focus-visible,.music-btn:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px rgba(226,71,127,.45)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(210,89,130,.4)}
+.btn.ghost{color:var(--rose-deep);background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px rgba(210,89,130,.22),0 6px 18px rgba(180,60,100,.08)}
+.btn.ghost:hover{background:rgba(255,255,255,.92)}
+.btn:focus-visible,.envelope:focus-visible,.music-btn:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px rgba(210,89,130,.35)}
 .btn.pulse{animation:pulse 2.2s ease-in-out infinite}
 @keyframes shine{0%,55%{left:-60%}100%{left:130%}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 
-.glass{background:var(--glass);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
-  border:1px solid var(--glass-line);border-radius:28px;box-shadow:0 24px 60px rgba(214,76,135,.22),inset 0 1px 0 rgba(255,255,255,.85)}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(20px) saturate(1.3);backdrop-filter:blur(20px) saturate(1.3);
+  border:1px solid var(--glass-line);border-radius:28px;box-shadow:0 20px 50px rgba(150,56,93,.14),inset 0 1px 0 rgba(255,255,255,.9)}
 
 /* ---------- chờ chút ---------- */
 #loader{justify-content:center;gap:16px}
 .loader-heart{width:86px;height:86px;overflow:visible}
-.loader-heart path{fill:rgba(255,122,168,0);stroke:#e2477f;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:70;stroke-dashoffset:70;
+.loader-heart path{fill:rgba(244,142,168,0);stroke:#d25982;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:70;stroke-dashoffset:70;
   animation:drawHeart 1.6s ease forwards,fillHeart .9s ease 1.3s forwards,beat 1.1s ease-in-out 2s infinite;transform-origin:12px 13px}
 @keyframes drawHeart{to{stroke-dashoffset:0}}
-@keyframes fillHeart{to{fill:rgba(255,122,168,.9)}}
+@keyframes fillHeart{to{fill:rgba(244,142,168,.85)}}
 @keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.12)}60%{transform:scale(.98)}}
 .loader-title{margin:0;font:700 clamp(1.9rem,7vw,2.6rem)/1.2 var(--f-viet-script);color:var(--rose-deep)}
 .loader-sub{margin:0;font:italic .98rem var(--f-letter);color:var(--ink-soft);min-height:1.5em;transition:opacity .4s}
-.loader-bar{width:160px;height:3px;border-radius:3px;background:rgba(226,71,127,.15);overflow:hidden}
-.loader-bar i{display:block;height:100%;width:40%;border-radius:3px;background:linear-gradient(90deg,#ff9fc2,#e2477f);animation:load 1.2s ease-in-out infinite}
+.loader-bar{width:160px;height:3px;border-radius:3px;background:rgba(210,89,130,.15);overflow:hidden}
+.loader-bar i{display:block;height:100%;width:40%;border-radius:3px;background:linear-gradient(90deg,#f6a5bd,#d25982);animation:load 1.2s ease-in-out infinite}
 @keyframes load{from{transform:translateX(-100%)}to{transform:translateX(260%)}}
 
 /* ---------- khung & ánh kim ---------- */
-.frame{position:fixed;z-index:4;pointer-events:none;border:1px solid rgba(201,152,79,.42);border-radius:22px;box-shadow:inset 0 0 0 4px rgba(255,255,255,.16);
+.frame{position:fixed;z-index:4;pointer-events:none;border:1px solid rgba(204,161,98,.38);border-radius:22px;box-shadow:inset 0 0 0 4px rgba(255,255,255,.16);
   top:calc(env(safe-area-inset-top,0px) + 10px);bottom:calc(env(safe-area-inset-bottom,0px) + 10px);left:calc(env(safe-area-inset-left,0px) + 10px);right:calc(env(safe-area-inset-right,0px) + 10px)}
-.frame::before,.frame::after{content:"";position:absolute;left:50%;width:9px;height:9px;margin-left:-4.5px;transform:rotate(45deg);background:linear-gradient(135deg,#f3d9a4,#b8894a)}
+.frame::before,.frame::after{content:"";position:absolute;left:50%;width:9px;height:9px;margin-left:-4.5px;transform:rotate(45deg);background:linear-gradient(135deg,#f5dfb0,#be9154)}
 .frame::before{top:-5px}
 .frame::after{bottom:-5px}
-.foil{background:linear-gradient(100deg,#8f5c22 0%,#c99a52 22%,#9c6a2c 45%,#d9b06a 65%,#8a5a20 100%);background-size:220% 100%;
+.foil{background:linear-gradient(100deg,#996328 0%,#cca162 22%,#a87435 45%,#e0b875 65%,#996328 100%);background-size:220% 100%;
   -webkit-background-clip:text;background-clip:text;color:transparent;animation:foil 7s linear infinite}
 @keyframes foil{from{background-position:0% 50%}to{background-position:220% 50%}}
 .brand{position:fixed;z-index:5;top:calc(env(safe-area-inset-top,0px) + 24px);left:calc(env(safe-area-inset-left,0px) + 32px);margin:0;
@@ -149,14 +149,14 @@ button{touch-action:manipulation}
 .ornament span{font:500 clamp(1rem,3vw,1.2rem) var(--f-display);letter-spacing:.34em;padding-left:.34em}
 .intro-lead{margin:8px 0 0;font:italic 400 clamp(1rem,2.6vw,1.15rem)/1.65 var(--f-letter);color:var(--ink-soft);text-wrap:balance}
 .name-card{grid-area:form;width:min(440px,100%);box-sizing:border-box;padding:22px 24px 18px;display:flex;flex-direction:column;gap:12px;text-align:left;
-  border-color:rgba(201,152,79,.4);animation:rise 1s cubic-bezier(.2,.8,.2,1) .15s both}
+  border-color:rgba(204,161,98,.36);animation:rise 1s cubic-bezier(.2,.8,.2,1) .15s both}
 .field-label{font:600 .72rem var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
 .field{position:relative}
-.field::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#e2477f,#f5b0c9);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.field::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#d25982,#f5b8cb);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
 .field:focus-within::after{transform:scaleX(1)}
-#nameInput{width:100%;box-sizing:border-box;padding:8px 2px 10px;border:0;border-bottom:1.5px solid rgba(201,152,79,.55);border-radius:0;background:transparent;
+#nameInput{width:100%;box-sizing:border-box;padding:8px 2px 10px;border:0;border-bottom:1.5px solid rgba(204,161,98,.5);border-radius:0;background:transparent;
   color:var(--ink);font:500 1.4rem/1.3 var(--f-display);outline:none}
-#nameInput::placeholder{color:#c49ab0;font-style:italic;font-weight:400}
+#nameInput::placeholder{color:#c99fb4;font-style:italic;font-weight:400}
 .preview{display:flex;flex-direction:column;align-items:flex-start;padding:8px 14px 10px;border-radius:14px;background:rgba(255,255,255,.55);animation:rise .45s ease both}
 .preview small{font:600 .68rem var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
 .preview strong{font:700 1.65rem/1.25 var(--f-viet-script);color:var(--rose-deep);overflow-wrap:anywhere}
@@ -165,7 +165,7 @@ button{touch-action:manipulation}
 .btn:hover .arrow{transform:translateX(4px)}
 .form-msg{margin:0;font-size:.9rem;line-height:1.45;color:var(--rose-deep)}
 .form-msg:empty{display:none}
-.signed{margin:0;padding-top:10px;border-top:1px solid rgba(201,152,79,.25);display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+.signed{margin:0;padding-top:10px;border-top:1px solid rgba(204,161,98,.22);display:flex;align-items:baseline;justify-content:space-between;gap:10px;
   font:600 .68rem var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
 .signed b{font:700 1.25rem var(--f-viet-script);letter-spacing:0;text-transform:none}
 .shake{animation:shake .5s cubic-bezier(.36,.07,.19,.97) both}
@@ -186,28 +186,28 @@ button{touch-action:manipulation}
 /* ---------- phong thư ---------- */
 #envelope{gap:26px}
 .envelope{position:relative;width:min(360px,84vw);max-width:100%;aspect-ratio:3/2;border:0;padding:0;background:none;cursor:pointer;perspective:1000px;
-  filter:drop-shadow(0 26px 30px rgba(190,60,115,.28))}
+  filter:drop-shadow(0 24px 30px rgba(160,50,90,.18))}
 .envelope.drop{animation:envDrop 1.1s cubic-bezier(.2,.9,.25,1.12) both}
 @keyframes envDrop{from{transform:translateY(-70px) rotate(-7deg) scale(.85);opacity:0}to{transform:none;opacity:1}}
 .envelope > span{position:absolute;display:block}
-.env-back{inset:0;border-radius:12px;background:linear-gradient(160deg,#f77fa9,#df5289);z-index:1}
+.env-back{inset:0;border-radius:12px;background:linear-gradient(160deg,#f08ea9,#cb527b);z-index:1}
 .env-letter{left:7%;right:7%;top:6%;height:86%;z-index:2;box-sizing:border-box;padding:11% 10% 0;border-radius:6px;background:var(--paper);
-  box-shadow:0 2px 8px rgba(120,30,70,.15);display:flex !important;flex-direction:column;align-items:center;gap:6px;
+  box-shadow:0 2px 8px rgba(100,30,60,.12);display:flex !important;flex-direction:column;align-items:center;gap:6px;
   transition:transform 1.1s cubic-bezier(.3,.8,.25,1) .5s}
 .mini-greet{font:700 1.25rem/1.2 var(--f-viet-script);color:var(--rose-deep);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mini-lines{width:100%}
-.mini-lines i{display:block;height:2px;margin:9px 0;border-radius:2px;background:rgba(226,71,127,.2)}
+.mini-lines i{display:block;height:2px;margin:9px 0;border-radius:2px;background:rgba(210,89,130,.18)}
 .mini-lines i:nth-child(2){width:86%}
 .mini-lines i:nth-child(3){width:64%}
 .env-pocket{inset:0;z-index:3;border-radius:12px;overflow:hidden}
-.env-pocket::before{content:"";position:absolute;inset:0;background:linear-gradient(200deg,#ffb7cf,#ff8cb4);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
-.env-pocket::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#ff9cbe,#ffc6d9);clip-path:polygon(0 100%,50% 48%,100% 100%)}
+.env-pocket::before{content:"";position:absolute;inset:0;background:linear-gradient(200deg,#fbc1d2,#f29cb7);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.env-pocket::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#f0a4bc,#fbd3e1);clip-path:polygon(0 100%,50% 48%,100% 100%)}
 .env-flap{left:0;right:0;top:0;height:62%;z-index:4;transform-origin:50% 0;transition:transform .9s cubic-bezier(.5,0,.3,1),z-index 0s linear .42s}
-.env-flap::before{content:"";position:absolute;inset:0;border-radius:12px 12px 0 0;background:linear-gradient(180deg,#ff86b0,#ffb0cb);clip-path:polygon(0 0,100% 0,50% 100%)}
+.env-flap::before{content:"";position:absolute;inset:0;border-radius:12px 12px 0 0;background:linear-gradient(180deg,#f08fae,#f8bfd1);clip-path:polygon(0 0,100% 0,50% 100%)}
 .env-seal{left:50%;top:62%;width:60px;height:60px;margin:-30px 0 0 -30px;z-index:5;border-radius:50%;
-  background:radial-gradient(circle at 34% 30%,#ff80aa,#c42d65 70%);box-shadow:0 4px 12px rgba(140,20,60,.38),inset 0 0 0 4px rgba(255,255,255,.14);
+  background:radial-gradient(circle at 34% 30%,#ea7d9f,#b23260 70%);box-shadow:0 4px 14px rgba(130,30,65,.28),inset 0 0 0 4px rgba(255,255,255,.18);
   display:grid !important;place-items:center;transition:transform .5s,opacity .5s;animation:sealPulse 2.2s ease-in-out infinite}
-.env-seal svg{width:26px;height:26px;fill:#ffe3ee}
+.env-seal svg{width:26px;height:26px;fill:#fce8f0}
 @keyframes sealPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
 .envelope.open .env-seal{transform:scale(.2);opacity:0;animation:none}
 .envelope.open .env-flap{transform:rotateX(180deg);z-index:1}
@@ -215,27 +215,27 @@ button{touch-action:manipulation}
 
 /* ---------- thư tay ---------- */
 #letter{gap:14px}
-.paper{position:relative;width:min(640px,100%);flex:1 1 auto;min-height:0;box-sizing:border-box;border-radius:8px;
+.paper{position:relative;width:min(640px,100%);flex:1 1 auto;min-height:0;box-sizing:border-box;border-radius:12px;
   background-color:var(--paper);
-  background-image:radial-gradient(120% 50% at 0% 0%,rgba(255,206,224,.5),transparent 60%),radial-gradient(90% 45% at 100% 100%,rgba(255,214,230,.55),transparent 60%),
+  background-image:radial-gradient(120% 50% at 0% 0%,rgba(252,224,234,.45),transparent 60%),radial-gradient(90% 45% at 100% 100%,rgba(255,235,242,.45),transparent 60%),
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .3 0 0 0 0 .35 0 0 0 .07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  box-shadow:0 30px 70px rgba(170,50,105,.25),inset 0 0 0 1px rgba(255,255,255,.9)}
+  box-shadow:0 24px 60px rgba(140,50,85,.16),inset 0 0 0 1px rgba(255,255,255,.95)}
 .screen.active .paper{animation:paperIn 1s cubic-bezier(.2,.8,.2,1) both}
 .paper.swap{animation:paperSwap .9s cubic-bezier(.2,.8,.2,1) both !important}
 @keyframes paperIn{from{opacity:0;transform:translateY(40px) scale(.94)}to{opacity:1;transform:none}}
 @keyframes paperSwap{0%{opacity:0;transform:rotateY(-12deg) translateX(-30px)}100%{opacity:1;transform:none}}
 .paper-inner{position:relative;margin:12px;min-height:calc(100% - 24px);box-sizing:border-box;padding:clamp(30px,6vw,54px) clamp(22px,6vw,58px) clamp(28px,5vw,44px);
-  border:1.5px solid rgba(201,152,79,.55);outline:1px solid rgba(201,152,79,.28);outline-offset:-7px;border-radius:4px}
+  border:1.5px solid rgba(204,161,98,.45);outline:1px solid rgba(204,161,98,.22);outline-offset:-7px;border-radius:6px}
 .paper-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 .paper-date{margin:0;font:italic 500 .95rem var(--f-display);color:var(--ink-soft);letter-spacing:.02em}
 .paper-mark{margin:0;font:600 .7rem var(--f-body);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
 .paper-greet{margin:.45em 0 .7em;font:700 clamp(1.9rem,6.4vw,2.6rem)/1.2 var(--f-viet-script);color:var(--rose-deep);text-wrap:balance;overflow-wrap:anywhere}
-.paper-body p{margin:0 0 1em;max-width:62ch;font:400 clamp(1.02rem,3.6vw,1.13rem)/1.86 var(--f-letter);color:#4b2136;text-wrap:pretty}
+.paper-body p{margin:0 0 1em;max-width:62ch;font:400 clamp(1.02rem,3.6vw,1.13rem)/1.86 var(--f-letter);color:#3b2332;text-wrap:pretty}
 .paper-body p.fade{animation:rise .7s ease both}
 .paper-body p.typing::after{content:"";display:inline-block;width:2px;height:1.05em;margin-left:2px;vertical-align:-.15em;background:var(--rose);animation:caret 1s steps(1) infinite}
 .paper-body p.closing{font:700 clamp(1.5rem,5vw,1.9rem)/1.3 var(--f-viet-script);color:var(--rose)}
 @keyframes caret{50%{opacity:0}}
-.paper-ps{margin:1.2em 0 0;padding-top:1em;border-top:1px dashed rgba(201,152,79,.55);font:italic 400 1rem/1.75 var(--f-letter);color:var(--ink-soft);
+.paper-ps{margin:1.2em 0 0;padding-top:1em;border-top:1px dashed rgba(204,161,98,.45);font:italic 400 1rem/1.75 var(--f-letter);color:var(--ink-soft);
   opacity:0;transform:translateY(10px);transition:opacity .9s ease,transform .9s ease}
 .paper-ps b{font-style:normal;font-weight:600;color:var(--rose-deep);letter-spacing:.02em}
 .paper-sign{margin-top:1.4em;text-align:right;opacity:0;transform:translateY(12px);transition:opacity .9s ease .25s,transform .9s ease .25s}
@@ -253,8 +253,8 @@ button{touch-action:manipulation}
 /* ---------- nhạc ---------- */
 .music-btn{position:fixed;z-index:6;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));
   height:46px;padding:0 16px 0 14px;border-radius:999px;border:1px solid var(--glass-line);cursor:pointer;
-  background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--rose-deep);
-  display:flex;align-items:center;gap:9px;font:500 .85rem var(--f-body);box-shadow:0 8px 22px rgba(214,76,135,.2)}
+  background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--rose-deep);
+  display:flex;align-items:center;gap:9px;font:500 .85rem var(--f-body);box-shadow:0 8px 22px rgba(180,60,100,.14)}
 .eq{display:flex;align-items:flex-end;gap:3px;height:16px}
 .eq i{display:block;width:3px;height:4px;border-radius:2px;background:var(--rose)}
 .music-btn.on .eq i{animation:eq .9s ease-in-out infinite alternate}
@@ -518,13 +518,13 @@ function formatName(raw) {
 const fillText = s => String(s || '').replace(/\{ten\}/g, S.given).replace(/\{name\}/g, S.name);
 
 /* ---------------- tim bay khi chạm ---------------- */
-const TAP_COLORS = ['#ff7fae', '#ffb3cc', '#e2477f', '#ffd1e0', '#ffffff'];
+const TAP_COLORS = ['#f59cb7', '#f8bfd1', '#d25982', '#fce2ec', '#ffffff'];
 function tapBurst(x, y, n = 6) {
   if (REDUCED) return;
   for (let i = 0; i < n; i++) {
     const el = document.createElement('span');
     el.className = 'tap-heart';
-    el.innerHTML = `<svg viewBox="0 0 24 24"><path d="${HEART_PATH}" fill="${TAP_COLORS[i % TAP_COLORS.length]}" stroke="rgba(226,71,127,.35)" stroke-width=".8"/></svg>`;
+    el.innerHTML = `<svg viewBox="0 0 24 24"><path d="${HEART_PATH}" fill="${TAP_COLORS[i % TAP_COLORS.length]}" stroke="rgba(210,89,130,.3)" stroke-width=".8"/></svg>`;
     el.style.left = x + 'px'; el.style.top = y + 'px';
     document.body.appendChild(el);
     const a = Math.random() * Math.PI * 2, d = 36 + Math.random() * 56, sc = 0.7 + Math.random() * 0.8;
@@ -688,21 +688,21 @@ function initThree() {
   const envScene = new T.Scene();
   {
     const geo = new T.SphereGeometry(20, 32, 16), cols = [], p = geo.attributes.position;
-    const top = new T.Color(0xdfe8ff).multiplyScalar(0.55), mid = new T.Color(0xffe4ef).multiplyScalar(0.5), bot = new T.Color(0xff9cc2).multiplyScalar(0.45);
+    const top = new T.Color(0xdce8f6).multiplyScalar(0.55), mid = new T.Color(0xfcf2f6).multiplyScalar(0.5), bot = new T.Color(0xf6abc6).multiplyScalar(0.42);
     for (let i = 0; i < p.count; i++) { const y = p.getY(i) / 20; const c = y > 0 ? mid.clone().lerp(top, y) : mid.clone().lerp(bot, -y); cols.push(c.r, c.g, c.b); }
     geo.setAttribute('color', new T.Float32BufferAttribute(cols, 3));
     envScene.add(new T.Mesh(geo, new T.MeshBasicMaterial({ vertexColors: true, side: T.BackSide })));
     const panel = (x, y, z, w, h, c) => { const m = new T.Mesh(new T.PlaneGeometry(w, h), new T.MeshBasicMaterial({ color: c, side: T.DoubleSide })); m.position.set(x, y, z); m.lookAt(0, 0, 0); envScene.add(m); };
     panel(6, 10, 8, 10, 6, new T.Color(2.2, 2.2, 2.2));
-    panel(-12, 2, 4, 4, 10, new T.Color(1.0, 0.8, 0.9));
-    panel(0, -4, 14, 14, 3, new T.Color(0.8, 0.6, 0.7));
+    panel(-12, 2, 4, 4, 10, new T.Color(1.0, 0.82, 0.9));
+    panel(0, -4, 14, 14, 3, new T.Color(0.8, 0.62, 0.72));
   }
   const pmrem = new T.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(envScene, 0.04).texture;
-  scene.add(new T.HemisphereLight(0xfff4fa, 0xffc4da, 0.3));
-  const key = new T.DirectionalLight(0xffffff, 0.6); key.position.set(4, 7, 8); scene.add(key);
-  const rim = new T.PointLight(0xff8fc0, 0.6, 30); rim.position.set(-6, -1, 5); scene.add(rim);
-  const flash = new T.PointLight(0xffe6f0, 0, 16); flash.position.set(0, 0, 4); scene.add(flash);
+  scene.add(new T.HemisphereLight(0xfff6fb, 0xf7cedc, 0.35));
+  const key = new T.DirectionalLight(0xffffff, 0.65); key.position.set(4, 7, 8); scene.add(key);
+  const rim = new T.PointLight(0xf799bd, 0.55, 30); rim.position.set(-6, -1, 5); scene.add(rim);
+  const flash = new T.PointLight(0xffeaf2, 0, 16); flash.position.set(0, 0, 4); scene.add(flash);
 
   /* texture vẽ bằng canvas */
   function canvasTex(w, h, draw) { const c = document.createElement('canvas'); c.width = w; c.height = h; draw(c.getContext('2d')); const t = new T.CanvasTexture(c); t.anisotropy = 4; return t; }
@@ -711,13 +711,13 @@ function initThree() {
     g.bezierCurveTo(10, 122, 0, 40, 34, 12); g.bezierCurveTo(48, 0, 58, 6, 64, 18); g.bezierCurveTo(70, 6, 80, 0, 94, 12); g.bezierCurveTo(128, 40, 118, 122, 64, 158);
     g.closePath();
     const grd = g.createRadialGradient(64, 150, 4, 64, 80, 120);
-    grd.addColorStop(0, '#fff2d6'); grd.addColorStop(0.28, '#ffffff'); grd.addColorStop(1, '#ffe3ec');
+    grd.addColorStop(0, '#fff4e0'); grd.addColorStop(0.3, '#ffffff'); grd.addColorStop(1, '#fde6ee');
     g.fillStyle = grd; g.fill();
-    g.save(); g.clip(); g.lineWidth = 1.1; g.strokeStyle = 'rgba(255,170,200,.22)';
+    g.save(); g.clip(); g.lineWidth = 1.1; g.strokeStyle = 'rgba(235,160,185,.2)';
     for (let i = -3; i <= 3; i++) { g.beginPath(); g.moveTo(64, 158); g.quadraticCurveTo(64 + i * 14, 90, 64 + i * 22, 8); g.stroke(); }
     g.restore();
   });
-  const glowTex = canvasTex(128, 128, g => { const grd = g.createRadialGradient(64, 64, 0, 64, 64, 64); grd.addColorStop(0, 'rgba(255,240,246,1)'); grd.addColorStop(0.35, 'rgba(255,180,210,.45)'); grd.addColorStop(1, 'rgba(255,180,210,0)'); g.fillStyle = grd; g.fillRect(0, 0, 128, 128); });
+  const glowTex = canvasTex(128, 128, g => { const grd = g.createRadialGradient(64, 64, 0, 64, 64, 64); grd.addColorStop(0, 'rgba(255,244,248,1)'); grd.addColorStop(0.35, 'rgba(245,170,195,.4)'); grd.addColorStop(1, 'rgba(245,170,195,0)'); g.fillStyle = grd; g.fillRect(0, 0, 128, 128); });
 
   /* hình học dùng chung */
   const bendZ = (nx, ny, w, h, o) => -o.cup * nx * nx * w * 0.5 + o.curl * ny * ny * ny * h + o.roll * Math.pow(Math.abs(nx), 3) * ny * ny * w * 0.5 + o.wave * Math.sin(nx * 7 + ny * 4) * ny * h * 0.04;
@@ -756,7 +756,7 @@ function initThree() {
   const crystalTex = canvasTex(256, 320, g => {
     petalShape(g);
     const grd = g.createLinearGradient(0, 320, 0, 0);
-    grd.addColorStop(0, '#ffffff'); grd.addColorStop(0.5, '#fff0f6'); grd.addColorStop(1, '#ffd9e8');
+    grd.addColorStop(0, '#ffffff'); grd.addColorStop(0.5, '#fff2f7'); grd.addColorStop(1, '#fcdce7');
     g.fillStyle = grd; g.fill();
     g.save(); g.clip();
     g.lineWidth = 12; g.strokeStyle = 'rgba(255,255,255,.95)'; g.shadowColor = '#ffffff'; g.shadowBlur = 20; g.stroke();
@@ -766,7 +766,7 @@ function initThree() {
   });
   const crystalLeafTex = canvasTex(96, 192, g => {
     g.beginPath(); g.moveTo(48, 190); g.bezierCurveTo(2, 150, 4, 48, 48, 2); g.bezierCurveTo(92, 48, 94, 150, 48, 190); g.closePath();
-    const grd = g.createLinearGradient(0, 0, 96, 0); grd.addColorStop(0, '#d4fbe9'); grd.addColorStop(0.5, '#ffffff'); grd.addColorStop(1, '#d4fbe9');
+    const grd = g.createLinearGradient(0, 0, 96, 0); grd.addColorStop(0, '#def8ed'); grd.addColorStop(0.5, '#ffffff'); grd.addColorStop(1, '#def8ed');
     g.fillStyle = grd; g.fill();
     g.save(); g.clip();
     g.lineWidth = 7; g.strokeStyle = '#ffffff'; g.shadowColor = '#ffffff'; g.shadowBlur = 12; g.stroke(); g.shadowBlur = 0;
@@ -807,24 +807,24 @@ function initThree() {
 
   /* ---- trái tim ở màn nhập tên ---- */
   const hero = new T.Group(); scene.add(hero);
-  const heroHeart = new T.Mesh(heartGeo, crystal(0xf0307a, { opacity: 0.9, flatShading: false, side: T.FrontSide, depthWrite: true })); heroHeart.scale.setScalar(1.25); hero.add(heroHeart);
-  heroHeart.add(new T.Mesh(heartGeo, rimMaterial(null, 0xffc2dc, 1.6)));
-  const heroGlow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, color: 0xff9cc4, transparent: true, blending: T.AdditiveBlending, depthWrite: false, opacity: 0.4 }));
+  const heroHeart = new T.Mesh(heartGeo, crystal(0xd24879, { opacity: 0.9, flatShading: false, side: T.FrontSide, depthWrite: true })); heroHeart.scale.setScalar(1.25); hero.add(heroHeart);
+  heroHeart.add(new T.Mesh(heartGeo, rimMaterial(null, 0xfcc6dc, 1.6)));
+  const heroGlow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, color: 0xf5a2c2, transparent: true, blending: T.AdditiveBlending, depthWrite: false, opacity: 0.4 }));
   heroGlow.position.z = -0.6; heroGlow.scale.setScalar(3.6); hero.add(heroGlow);
   const ringMat = new T.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.08, metalness: 0.85, clearcoat: 1, envMapIntensity: 1.6 });
   const ring1 = new T.Mesh(new T.TorusGeometry(1.15, 0.022, 12, 160), ringMat); ring1.rotation.set(1.25, 0.25, 0); hero.add(ring1);
   const ring2 = new T.Mesh(new T.TorusGeometry(1.34, 0.012, 8, 160), ringMat); ring2.rotation.set(1.45, -0.35, 0); hero.add(ring2);
   const orbitTilt = new T.Group(); orbitTilt.rotation.copy(ring1.rotation); hero.add(orbitTilt);
   const orbit = new T.Group(); orbitTilt.add(orbit);
-  const pearlMat = glossy(0xfff3f8);
+  const pearlMat = glossy(0xfff5f8);
   for (let i = 0; i < 3; i++) { const a = i / 3 * Math.PI * 2; const p = new T.Mesh(new T.SphereGeometry(0.065, 20, 14), pearlMat); p.position.set(Math.cos(a) * 1.15, Math.sin(a) * 1.15, 0); orbit.add(p); }
   hero.userData = { vis: 0, spin: 0, base: { x: 0, y: 0, s: 1 } };
 
   /* ---- hộp quà ---- */
   const gift = new T.Group(); scene.add(gift);
   const giftInner = new T.Group(); giftInner.position.y = -0.42; gift.add(giftInner);
-  const boxMat = new T.MeshPhysicalMaterial({ color: 0xffa9c8, roughness: 0.38, clearcoat: 0.7, clearcoatRoughness: 0.25, transparent: true });
-  const ribMat = new T.MeshPhysicalMaterial({ color: 0xfff6fa, roughness: 0.22, metalness: 0.12, clearcoat: 1, transparent: true });
+  const boxMat = new T.MeshPhysicalMaterial({ color: 0xf4b6c8, roughness: 0.35, clearcoat: 0.7, clearcoatRoughness: 0.22, transparent: true });
+  const ribMat = new T.MeshPhysicalMaterial({ color: 0xfffaf5, roughness: 0.2, metalness: 0.1, clearcoat: 1, transparent: true });
   const lidMat = boxMat.clone(), lidRibMat = ribMat.clone();
   const body = new T.Group(); giftInner.add(body);
   body.add(new T.Mesh(roundedBox(2, 1.5, 2, 0.08, 0.05), boxMat));
@@ -841,18 +841,18 @@ function initThree() {
   });
   const knot = new T.Mesh(new T.SphereGeometry(0.13, 20, 14), lidRibMat); knot.position.y = 0.3; knot.scale.set(1, 0.8, 1); lid.add(knot);
   gift.userData = { appear: 0, lid: 0, gone: 0, shake: 0, base: { x: 0, y: 0, s: 1 } };
-  const giftGlow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, color: 0xffc2d8, transparent: true, blending: T.AdditiveBlending, depthWrite: false, opacity: 0 }));
+  const giftGlow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, color: 0xf8c6d7, transparent: true, blending: T.AdditiveBlending, depthWrite: false, opacity: 0 }));
   scene.add(giftGlow);
 
   /* ---- đóa hồng pha lê, tương tác được ---- */
-  const leafMat = crystal(0x3fb37c, { map: crystalLeafTex, alphaTest: 0.5, opacity: 0.86 });
-  const leafRim = rimMaterial(crystalLeafTex, 0xa8f0cc, 3.0);
+  const leafMat = crystal(0x4ca882, { map: crystalLeafTex, alphaTest: 0.5, opacity: 0.88 });
+  const leafRim = rimMaterial(crystalLeafTex, 0xbbf5dc, 3.0);
   const roseRoot = new T.Group(); scene.add(roseRoot);
   const roseSpin = new T.Group(); roseRoot.add(roseSpin);
   const head = new T.Group(); roseSpin.add(head);
   const BR_N = 46, brPetals = [];
-  const roseMats = [0xd8125a, 0xec2a70, 0xf83f84, 0xff5b98].map((c, k) => crystal(c, { map: crystalTex, alphaTest: 0.5, opacity: 0.93 - k * 0.05 }));
-  const petalRim = rimMaterial(crystalTex, 0xffa8d0, 3.0);
+  const roseMats = [0xc42f62, 0xd44778, 0xe56290, 0xf684ac].map((c, k) => crystal(c, { map: crystalTex, alphaTest: 0.5, opacity: 0.93 - k * 0.05 }));
+  const petalRim = rimMaterial(crystalTex, 0xfcb0cf, 3.0);
   const glintMat = new T.ShaderMaterial({
     uniforms: { uTime: { value: 0 }, uPR: { value: renderer.getPixelRatio() }, uBoost: { value: 0 } },
     vertexShader: `attribute float aPhase; attribute float aSize; uniform float uTime; uniform float uPR; uniform float uBoost; varying float vA;
@@ -892,17 +892,17 @@ function initThree() {
     pv.add(m); head.add(pv);
     brPetals.push({ m, t, w, h, opt, ph: rand(0, 6.28) });
   }
-  const core = new T.Mesh(new T.IcosahedronGeometry(0.13, 0), crystal(0xc40f50, { opacity: 0.95, side: T.FrontSide }));
+  const core = new T.Mesh(new T.IcosahedronGeometry(0.13, 0), crystal(0xb52458, { opacity: 0.95, side: T.FrontSide }));
   core.scale.set(1, 1.4, 1); core.position.y = 0.14; head.add(core);
-  const coreGlow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, color: 0xffd0e4, transparent: true, blending: T.AdditiveBlending, depthWrite: false, opacity: 0.8 }));
+  const coreGlow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, color: 0xfad6e6, transparent: true, blending: T.AdditiveBlending, depthWrite: false, opacity: 0.8 }));
   coreGlow.position.y = 0.3; coreGlow.scale.setScalar(0.8); head.add(coreGlow);
   const sepalGeo = bentPlane(0.2, 0.6, { cup: 0.4, curl: 0.3 }, 4);
   for (let k = 0; k < 5; k++) { const pv = new T.Group(); pv.rotation.y = k * 1.2566 + 0.3; const s = new T.Mesh(sepalGeo, leafMat); s.position.set(0, -0.08, 0.1); s.rotation.x = 2.05; pv.add(s); head.add(pv); }
   // thân & lá pha lê
   const stemCurve = new T.CatmullRomCurve3([new T.Vector3(0, -0.05, 0), new T.Vector3(0.06, -0.9, 0.04), new T.Vector3(-0.05, -1.9, -0.02), new T.Vector3(0.03, -3.2, 0.03)]);
   const stemGeo = new T.TubeGeometry(stemCurve, 48, 0.06, 8, false);
-  const stem = new T.Mesh(stemGeo, crystal(0x52bf8a, { opacity: 0.82, side: T.FrontSide }));
-  stem.add(new T.Mesh(stemGeo, rimMaterial(null, 0xe6fff3, 1.6)));
+  const stem = new T.Mesh(stemGeo, crystal(0x45a378, { opacity: 0.82, side: T.FrontSide }));
+  stem.add(new T.Mesh(stemGeo, rimMaterial(null, 0xe4fcf0, 1.6)));
   roseSpin.add(stem);
   const stemLeaves = [];
   const bigLeafGeo = bentPlane(0.62, 1.3, { cup: 0.6, curl: 0.18, wave: 0.6 }, 5);
@@ -914,7 +914,7 @@ function initThree() {
   // ánh sáng quét quanh hoa để các mặt cắt lấp lánh
   const sweep = new T.PointLight(0xffffff, 0.8, 7); roseRoot.add(sweep);
   // quầng sáng
-  const roseGlow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, color: 0xffb3cf, transparent: true, blending: T.AdditiveBlending, depthWrite: false, opacity: 0 }));
+  const roseGlow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, color: 0xf6b5cd, transparent: true, blending: T.AdditiveBlending, depthWrite: false, opacity: 0 }));
   roseGlow.position.set(0, 0.1, -1); roseGlow.scale.setScalar(6); roseRoot.add(roseGlow);
   roseRoot.userData = { rise: 0, bloom: 0, away: 0, pulse: 0, boost: 0, base: { x: 0, y: 0, s: 1 }, cur: null };
   roseRoot.visible = false;
@@ -925,7 +925,7 @@ function initThree() {
   const petGeo = bentPlane(0.3, 0.36, { cup: 0.6, curl: 0.3 }, 4); petGeo.translate(0, -0.18, 0);
   const petals = new T.InstancedMesh(petGeo, new T.MeshStandardMaterial({ map: petalTex, side: T.DoubleSide, alphaTest: 0.45, roughness: 0.55 }), PET_N);
   petals.instanceMatrix.setUsage(T.DynamicDrawUsage);
-  const petCols = [0xffb3cb, 0xff8fb3, 0xffd6e2, 0xffffff, 0xffc4d6, 0xf7a1c4].map(c => new T.Color(c));
+  const petCols = [0xf7bed0, 0xf09cb5, 0xfce1eb, 0xffffff, 0xf7cede, 0xf2a3bc].map(c => new T.Color(c));
   const pd = [];
   function spawn(p, anywhere) {
     p.z = rand(-8, 3.5); const V = vis(p.z);
@@ -945,7 +945,7 @@ function initThree() {
   }
 
   /* ---- tim bóng trôi nền ---- */
-  const fMats = [glossy(0xff8fb8), glossy(0xfff0f5), glossy(0xebcfff), glossy(0xffa9c9)];
+  const fMats = [glossy(0xf29cb5), glossy(0xfff6fa), glossy(0xe8d6f5), glossy(0xf4b6c8)];
   const floaters = [];
   for (let i = 0; i < (SMALL ? 4 : 6); i++) {
     const m = new T.Mesh(heartGeo, fMats[i % 4]);
